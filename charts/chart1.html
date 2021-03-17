@@ -7,121 +7,242 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="chartdiv2"></div>
+    <div id="chartdiv1"></div>
 </body>
-<style>
-    #chartdiv2 {
-      width: 100%;
-      height: 500px;
-    }
-    body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 9pt;
-    }
-    
-</style>
-    
+    <style>
+        #chartdiv1 {
+          width: 100%;
+          height: 600px;
+        }
+    </style>
     <!-- Resources -->
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/themes/kelly.js"></script>
-    
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/plugins/timeline.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
     <!-- Chart code -->
     <script>
-        /**
- * ---------------------------------------
- * This demo was created using amCharts 4.
- *
- * For more information visit:
- * https://www.amcharts.com/
- *
- * Documentation is available at:
- * https://www.amcharts.com/docs/v4/
- * ---------------------------------------
- */
+    am4core.ready(function() {
 
-// Apply chart themes
-am4core.useTheme(am4themes_animated);
-am4core.useTheme(am4themes_kelly);
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
 
-// Create chart instance
-var chart = am4core.create("chartdiv2", am4charts.XYChart);
+    var chart = am4core.create("chartdiv1", am4plugins_timeline.SpiralChart);
+    chart.curveContainer.padding(0, 100, 0, 120);
+    chart.maskBullets = false;
 
-// Add data
-chart.data = [{
-  "country": "Lithuania",
-  "litres": 65,
-  "units": 250000
-}, {
-  "country": "Czech Republic",
-  "litres": 66,
-  "units": 222000
-}, {
-  "country": "Ireland",
-  "litres": 67,
-  "units": 170000
-}, {
-  "country": "Germany",
-  "litres": 68,
-  "units": 122000
-}, {
-  "country": "Australia",
-  "litres": 65,
-  "units": 99000
-}, {
-  "country": "Austria",
-  "litres": 72,
-  "units": 85000
-}, {
-  "country": "UK",
-  "litres": 89,
-  "units": 93000
-}, {
-  "country": "Belgium",
-  "litres": 55,
-  "units": 50000
-}, {
-  "country": "The Netherlands",
-  "litres": 50,
-  "units": 42000
-}];
+    var colorSet = new am4core.ColorSet();
 
-// Create axes
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "country";
-categoryAxis.title.text = "Countries";
+    chart.data = [{
+        "category": "",
+        "year": "2014-07-07",
+        "size": 10,
+        "text": "ТЗК1 100 тербум"
+    }, {
+        "category": "",
+        "year": "2015-07-07",
+        "size": 5,
+        "text": "ТЗК5 50 тербум"
+    }, {
+        "category": "",
+        "year": "2016-07-07",
+        "size": 9,
+        "text": "ТЗК10 90 тербум"
+    }, {
+        "category": "",
+        "year": "2017-07-07",
+        "size": 12,
+        "text": "ТЗК15 120 тербум"
+    }, {
+        "category": "",
+        "year": "2018-07-07",
+        "size": 5,
+        "text": "ТЗК18 30 тербум"
+    }, {
+        "category": "",
+        "year": "2019-07-07",
+        "size": 9,
+        "text": "ТЗК20 90 тербум"
+    }, {
+        "category": "",
+        "year": "2020-07-07",
+        "size": 5,
+        "text": "ТЗК22 40 тербум"
+    }, {
+        "category": "",
+        "year": "2021-07-07",
+        "size": 3,
+        "text": "ТЗК27 30 тербум"
+    }, {
+        "category": "",
+        "size": 10,
+        "year": "2022-07-07",
+        "text": "ТЗК30 100 тербум"
+    },
+    {
+        "category": "",
+        "year": "2023-07-07",
+        "size": 9,
+        "text": "ТЗК20 90 тербум"
+    }, {
+        "category": "",
+        "year": "2024-07-07",
+        "size": 5,
+        "text": "ТЗК22 40 тербум"
+    }, {
+        "category": "",
+        "year": "2025-07-07",
+        "size": 3,
+        "text": "ТЗК27 30 тербум"
+    }, {
+        "category": "",
+        "size": 10,
+        "year": "2026-07-07",
+        "text": "ТЗК30 100 тербум"
+    }
+    ];
 
-// First value axis
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.title.text = "Litres sold (%)";
+    chart.dateFormatter.inputDateFormat = "yyyy-mm-dd";
+    chart.colors.list = [
+        am4core.color("#2776BD"),
+        am4core.color("#00A1D0"),
+        am4core.color("#00C195"),
+        am4core.color("#7ED321"),
+        am4core.color("#A8C600"),
+        am4core.color("#C9B600"),
+        am4core.color("#E3A600"),
+        am4core.color("#F7941E"),
+        am4core.color("#FC7149")
+    ];
+    chart.fontSize = 11;
+    chart.tooltipContainer.fontSize = 20;
 
-// Second value axis
-var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis2.title.text = "Units sold";
-valueAxis2.renderer.opposite = true;
+    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    // categoryAxis.dataFields.category = "category";
+    // categoryAxis.renderer.grid.template.disabled = true;
 
-// First series
-var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.valueY = "litres";
-series.dataFields.categoryX = "country";
-series.name = "Sales";
-series.tooltipText = "{name}: [bold]{valueY}[/]";
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.points = [{ x: -400, y: 0 }, { x: 0, y: 50 }, { x: 400, y: 0 }]
+    dateAxis.renderer.polyspline.tensionX = 0.8;
+    dateAxis.renderer.grid.template.disabled = true;
+    dateAxis.renderer.line.strokeDasharray = "1,4";
+    dateAxis.baseInterval = {period:"day", count:1}; // otherwise initial animation will be not smooth
 
-// Second series
-var series2 = chart.series.push(new am4charts.LineSeries());
-series2.dataFields.valueY = "units";
-series2.dataFields.categoryX = "country";
-series2.name = "Units";
-series2.tooltipText = "{name}: [bold]{valueY}[/]";
-series2.strokeWidth = 3;
-series2.yAxis = valueAxis2;
+    dateAxis.renderer.labels.template.disabled = true;
 
-// Add legend
-chart.legend = new am4charts.Legend();
+    var series = chart.series.push(new am4plugins_timeline.CurveLineSeries());
+    series.strokeOpacity = 0;
+    series.dataFields.dateX = "year";
+    series.dataFields.categoryY = "category";
+    series.dataFields.value = 20;
+    series.baseAxis = categoryAxis;
 
-// Add cursor
-chart.cursor = new am4charts.XYCursor();
+    var interfaceColors = new am4core.InterfaceColorSet();
+
+    series.tooltip.pointerOrientation = "down";
+
+    var distance = 100;
+    var angle = 60;
+
+    var bullet = series.bullets.push(new am4charts.Bullet());
+
+    // var line = bullet.createChild(am4core.Line);
+    // line.adapter.add("stroke", function(fill, target) {
+    //   if (target.dataItem) {
+    //     return chart.colors.getIndex(target.dataItem.index)
+    //   }
+    // });
+
+    // line.x1 = 0;
+    // line.y1 = 0;
+    // line.y2 = 0;
+    // line.x2 = distance - 10;
+    // line.strokeDasharray = "1,3";
+
+    var circle = bullet.createChild(am4core.Circle);
+    circle.radius = 30;
+    circle.fillOpacity = 1;
+    circle.strokeOpacity = 0;
+
+    var circleHoverState = circle.states.create("hover");
+    circleHoverState.properties.scale = 1.3;
+
+    series.heatRules.push({ target: circle, min: 20, max: 50, property: "radius" });
+    circle.adapter.add("fill", function(fill, target) {
+    if (target.dataItem) {
+        return chart.colors.getIndex(target.dataItem.index)
+    }
+    });
+    circle.tooltipText = "{text}";
+    circle.adapter.add("tooltipY", function(tooltipY, target){
+    return -target.pixelRadius - 4;
+    });
+
+    var yearLabel = bullet.createChild(am4core.Label);
+    yearLabel.text = "{year}";
+    yearLabel.strokeOpacity = 0;
+    yearLabel.fill = am4core.color("#fff");
+    yearLabel.horizontalCenter = "middle";
+    yearLabel.verticalCenter = "middle";
+    yearLabel.interactionsEnabled = false;
+
+    var label = bullet.createChild(am4core.Label);
+    // label.propertyFields.text = "text";
+    // label.strokeOpacity = 0;
+    // label.horizontalCenter = "right";
+    // label.verticalCenter = "middle";
+
+    label.adapter.add("opacity", function(opacity, target) {
+    if(target.dataItem){
+        var index = target.dataItem.index;
+        // var line = target.parent.children.getIndex(0);
+
+        if (index % 2 == 0) {
+        target.y = -distance * am4core.math.sin(-angle);
+        target.x = -distance * am4core.math.cos(-angle);
+        //   line.rotation = -angle - 300;
+        target.rotation = -angle;
+        }
+        else {
+        target.y = -distance * am4core.math.sin(angle);
+        target.x = -distance * am4core.math.cos(angle);
+        //   line.rotation = angle - 180;
+        target.rotation = angle;
+        }
+    }
+    return 1;
+    });
+
+    var outerCircle = bullet.createChild(am4core.Circle);
+    outerCircle.radius = 30;
+    outerCircle.fillOpacity = 0;
+    outerCircle.strokeOpacity = 0;
+    outerCircle.strokeDasharray = "1,3";
+
+    var hoverState = outerCircle.states.create("hover");
+    hoverState.properties.strokeOpacity = 0.8;
+    hoverState.properties.scale = 1.5;
+
+    outerCircle.events.on("over", function(event){
+    var circle = event.target.parent.children.getIndex(1);
+    circle.isHover = true;
+    event.target.stroke = circle.fill;
+    event.target.radius = circle.pixelRadius;
+    event.target.animate({property: "rotation", from: 0, to: 360}, 4000, am4core.ease.sinInOut);
+    });
+
+    outerCircle.events.on("out", function(event){
+    var circle = event.target.parent.children.getIndex(1);
+    circle.isHover = false;
+    });
+
+    chart.scrollbarX = new am4core.Scrollbar();
+    chart.scrollbarX.opacity = 0.5;
+    chart.scrollbarX.width = am4core.percent(50);
+    chart.scrollbarX.align = "center";
+
+    }); // end am4core.ready()
     </script>
-    
 </html>
