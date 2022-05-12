@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Styles -->
+<style>
+    #chartdiv {
+      width: 100%;
+      max-width: 100%;
+      height: 95vh;
+    }
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am5.ready(function() {
+    
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    var root = am5.Root.new("chartdiv");
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+    
+    var data = {
+      value: 0,
+      children: [
+        {
+            name : "[fontStyle:oblique]Монголын Ипотекийн \nКорпораци ОССК ХХК",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 3,081,955",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 20.21% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Худалдааа хөгжлийн банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 2,070,932",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 13.58% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Ти Ди Би \nCекьюритис ҮЦК",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 1,097,953",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 7.20% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Голомт банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 1,023,699",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 6.71% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Төрийн банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 486,951",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 3.19% ",
+                  value : 0,
+                }
+            ]
+        },  {
+            name : "[fontStyle:oblique]Капитрон банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 210,631",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 1.38% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Хаан банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 210,621",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 1.38% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Хас банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 210,621",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 1.38% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Чингис хаан банк",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 61,639",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 0.40% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Си Эн Би Консалтинг",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 2,608,480",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 17.11% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Азиа Дайверсифайд \nРийл Истэйт Фанд \nНэг Хувийн ХОС",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 2,312,500",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 15.17% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Юнайтед бэнкинг корпорэйшн",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 1,232,785",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 8.09% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Си И Си Групп",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 488,750",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 3.21% ",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Нексус Финанс Инвестмент",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 129,998",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 0.85%",
+                  value : 0,
+                }
+            ]
+        },
+        {
+            name : "[fontStyle:oblique]Бусад",
+            children : [
+                {
+                    name : "[fontStyle:oblique] Хувьцааны тоо: 19,376",
+                    value : 0,
+                },
+                {
+                  name : "[fontStyle:oblique] Хувь: 0.13% ",
+                  value : 0,
+                }
+            ]
+        },
+      ]
+    };
+    
+    // Create wrapper container
+    var container = root.container.children.push(am5.Container.new(root, {
+      width: am5.percent(100),
+      height: am5.percent(100),
+      layout: root.verticalLayout
+    }));
+    
+    // Create series
+    // https://www.amcharts.com/docs/v5/charts/hierarchy/#Adding
+    var series = container.children.push(am5hierarchy.ForceDirected.new(root, {
+      singleBranchOnly: false,
+      downDepth: 2,
+      topDepth: 1,
+      initialDepth: 0,
+      valueField: "value",
+      categoryField: "name",
+      childDataField: "children",
+      idField: "name",
+      linkWithField: "linkWith",
+      manyBodyStrength: -10,
+      centerStrength: 0.8,
+    }));
+    
+    series.get("colors").setAll({
+      step: 2
+    });
+    series.links.template.set("strength", 0.5);
+    
+    series.data.setAll([data]);
+    
+    series.set("selectedDataItem", series.dataItems[0]);
+    
+    
+    var tooltip = am5.Tooltip.new(root, {
+      autoTextColor : false,
+      disabled : false,
+      labelText : ""
+    })
+    series.set("tooltip", tooltip)
+    // Make stuff animate on load
+    series.appear(1000, 100);
+    
+    }); // end am5.ready()
+    </script>
+    
+<body>
+    <div id="chartdiv"></div>
+</body>
+</html>

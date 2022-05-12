@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Styles -->
+<style>
+    #chartdiv {
+      width: 2000px;
+      height: 1000px
+    }
+    
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    var chart = am4core.create("chartdiv", am4charts.SankeyDiagram);
+    chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+    
+    chart.data = [
+      { from: "Start", to: "Монголын Ипотекийн Корпораци ОССК ХХК", value: 4136790 },
+      { from: "Монголын Ипотекийн Корпораци ОССК ХХК", to: "МИК Холдинг ХК", value: 4136790 },
+
+      { from: "Start", to: "МИК Актив Нэг ТЗК ХХК", value: 892927 },
+      { from: "МИК Актив Нэг ТЗК ХХК", to: "Монголын Ипотекийн Корпораци ОССК ХХК", value: 892927 },
+      { from: "Монголын Ипотекийн Корпораци ОССК ХХК", to: "МИК Холдинг ХК", value: 892927 },
+
+      { from: "Start", to: "МИК Актив Хоёр ТЗК ХХК", value: 432712 },
+      { from: "МИК Актив Хоёр ТЗК ХХК", to: "Монголын Ипотекийн Корпораци ОССК ХХК", value: 432712 },
+      { from: "Монголын Ипотекийн Корпораци ОССК ХХК", to: "МИК Холдинг ХК", value: 432712 },    
+
+      { from: "Start", to: "Монгол улсын хөгжлийн банк", value: 3081955 },
+      { from: "Монгол улсын хөгжлийн банк", to: "Монгол улсын Засгийн газар", value: 3081955},
+
+      // TDB
+      { from: "Start", to: "Худалдааа хөгжлийн банк", value: 2070932},    
+      { from: "Худалдааа хөгжлийн банк", to: "Глобулл Инвестмент & Девелопмент ЭсСиЭй", value: 1325396 },
+      { from: "Худалдааа хөгжлийн банк", to: "Юнайтед бэнкинг корпорэйшн  ХХК", value: 647166},    
+      { from: "Худалдааа хөгжлийн банк", to: "Юу Эс Монголиа Инвестмент Лимитэд ", value: 67927},
+      { from: "Худалдааа хөгжлийн банк", to: "Бусад хувьцаа эзэмшигч ", value: 30443},    
+    
+      { from: "Глобулл Инвестмент & Девелопмент ЭсСиЭй", to: "Д.Эрдэнэбилэг", value:  103381  },
+      { from: "Глобулл Инвестмент & Девелопмент ЭсСиЭй", to: "Юу Эс Глобал Инвестмент", value:  1222016  },   
+      { from: "Юу Эс Глобал Инвестмент", to: "Д.Эрдэнэбилэг", value:  1222016  },
+
+      { from: "Юнайтед бэнкинг корпорэйшн  ХХК", to: "Си Эн Би Консалтинг", value:  647166  },
+      { from: "Си Эн Би Консалтинг", to: "Ти Ди Би Капитал Сингапур", value: 647166 },
+      { from: "Ти Ди Би Капитал Сингапур", to: "Э.Тулга", value: 647166 },
+
+
+      // TDB securities
+      { from: "Start", to: "Ти Ди Би Cекьюритис ҮЦК ХХК", value: 1097953 },
+      { from: "Ти Ди Би Cекьюритис ҮЦК ХХК", to: "Юнайтед бэнкинг корпорэйшн  ХХК", value: 796016},
+      { from: "Ти Ди Би Cекьюритис ҮЦК ХХК", to: "Си Эн Би Консалтинг", value: 301937},
+
+      { from: "Юнайтед бэнкинг корпорэйшн  ХХК", to: "Си Эн Би Консалтинг", value: 796016},
+      { from: "Си Эн Би Консалтинг", to: "Ти Ди Би Капитал Сингапур" , value: 301937},
+
+      { from: "Си Эн Би Консалтинг", to: "Ти Ди Би Капитал Сингапур", value: 796016},
+      { from: "Ти Ди Би Капитал Сингапур", to: "Э.Тулга", value: 301937 },
+
+      { from: "Ти Ди Би Капитал Сингапур", to: "Э.Тулга", value: 796016 },
+      
+      //Golomt bank
+      { from: "Start", to: "Голомт банк", value: 1023699},
+      { from: "Голомт банк", to: "Голомт Файнэншил Групп ХХК", value: 926140 }, 
+      { from: "Голомт банк", to: "Свисс-Мо Инвестмэнт Эй Жи", value:  63981}, 
+      { from: "Голомт банк", to: "Голомт Инвестмэнт Лимитэд", value: 31530}, 
+      { from: "Голомт банк", to: "Голомт банкны ажилтнууд", value: 2047 }, 
+
+      { from: "Голомт Файнэншил Групп ХХК", to: "Д.Баясгалан", value: 926140 }, 
+      { from: "Свисс-Мо Инвестмэнт Эй Жи", to: "Урс Э.Шварценбах ", value: 63341 }, 
+      { from: "Свисс-Мо Инвестмэнт Эй Жи", to: "Гаи Шварценбах", value: 640 }, 
+      { from: "Голомт Инвестмэнт Лимитэд", to: "Д.Баясгалан", value: 31530 }, 
+
+      // State bank
+      { from: "Start", to: "Төрийн банк", value: 486951 }, 
+      { from: "Төрийн банк", to: "Сангийн яам", value: 254432}, 
+      { from: "Төрийн банк", to: "Хадгаламжийн даатгалын корпораци", value: 232519}, 
+
+      // Capitron bank
+      { from: "Start", to: "Капитрон банк", value: 9 }, 
+      { from: "Капитрон банк", to: "Ажнай корпораци ХХК", value: 81156 }, 
+      { from: "Капитрон банк", to: "Д.Бат-Эрдэнэ",        value: 48382 }, 
+      { from: "Капитрон банк", to: "Д.Эрдэнэбаяр",        value: 35365 }, 
+      { from: "Капитрон банк", to: "Д.Мөнхсайхан",        value: 35196 }, 
+      { from: "Капитрон банк", to: "Ч.Амарбаатар",        value: 10532 },
+
+      { from: "Ажнай корпораци ХХК", to: "Д.Бат-Эрдэнэ", value: 81156}, 
+
+      // Khan bank
+      { from: "Start", to: "Хаан банк", value: 210621},     
+      { from: "Хаан банк", to: "Эйч Эс Холдингс” ХК", value: 95938},     
+      { from: "Хаан банк", to: "Таван Богд Трейд” ХХК", value: 53308},     
+      { from: "Хаан банк", to: "Д.Хулан", value: 30940},     
+      { from: "Хаан банк", to: "Эйч Эс Интернэйшнл” Лимитед", value: 20557},     
+      { from: "Хаан банк", to: "Хаан банкны ажилтнууд", value: 9878 },     
+
+      { from: "Таван Богд Трейд” ХХК", to: "Ц.Баатарсайхан", value: 31985 },     
+      { from: "Таван Богд Трейд” ХХК", to: "Д.Хулан", value: 10662 },     
+      { from: "Таван Богд Трейд” ХХК", to: "Ц.Оюунцэцэг", value: 5331 },     
+      { from: "Таван Богд Трейд” ХХК", to: "Ц.Оюунсүрэн", value: 2665 },     
+      { from: "Таван Богд Трейд” ХХК", to: "Ц.Оюунжав", value: 2665 },     
+      { from: "Эйч Эс Интернэйшнл” Лимитед", to: "Эйч Эс Холдингс” ХК", value: 20557 },    
+      
+      // Khas bank
+      
+      { from: "Start", to: "Хас банк", value: 210621},     
+      { from: "Хас банк", to: "ТэнГэр санхүүгийн нэгдэл", value: 210621 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Монголын Алт /МАК/ ХХК", value: 42124 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Олон улсын санхүүгийн корпораци", value: 36164 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "ОРИКС Корпораци", value: 35405 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Европын сэргээн босголт хөгжлийн банк", value: 27191 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Канадын үндэсний банк", value: 22157 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Ронок Партнерз", value: 21378 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Монголия Оппортунитиз партнес", value: 13964 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Триодос фэйр шэйр фанд", value: 7856 },     
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Нээлттэй нийгэм форум ТББ", value: 3349 },   
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Улаанбаатар ротари клуб ТББ", value: 632 },   
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "М.Болдоо", value: 211 },   
+      { from: "ТэнГэр санхүүгийн нэгдэл", to: "Ч.Ганболд", value: 190 },   
+
+      // Chingis khan bank 
+      { from: "Start", to: "Чингис Хаан банк", value: 61639},   
+      { from: "Чингис Хаан банк", to: "Ньюстандарт финанс", value: 61639 },   
+      { from: "Ньюстандарт финанс", to: "Ш.Бүтэд", value: 19355 },   
+      { from: "Ньюстандарт финанс", to: "Д.Батаа", value: 25025 },    
+      { from: "Ньюстандарт финанс", to: "Ц.Баярсайхан", value: 17259 },   
+
+      // CNB consulting
+      { from: "Start", to: "Си Эн Би Консалтинг", value: 2608480 },   
+      { from: "Си Эн Би Консалтинг", to: "Ти Ди Би Капитал Сингапур", value: 2608480 },   
+      { from: "Ти Ди Би Капитал Сингапур", to: "Э.Тулга", value: 2608480 }, 
+
+      // Asia
+      { from: "Start", to: "Азиа Дайверсифайд Рийл Истэйт Фанд Нэг Хувийн ХОС", value: 2312500 },   
+      { from: "Start", to: "Юнайтед бэнкинг корпорэйшн  ХХК", value: 1232785 },   
+      { from: "Юнайтед бэнкинг корпорэйшн  ХХК", to: "Си Эн Би Консалтинг", value: 1232785 },   
+      { from: "Си Эн Би Консалтинг", to: "Ти Ди Би Капитал Сингапур", value: 1232785 }, 
+      { from: "Ти Ди Би Капитал Сингапур", to: "Э.Тулга", value: 2608480 }, 
+
+      // other
+      { from: "Start", to: "Си И Си Групп", value: 488750 },   
+      { from: "Start", to: "Нексус Финанс Инвестмент", value: 129998 },   
+      { from: "Start", to: "Бусад", value: 19376 },   
+    //   { from: "H", to: "J", value: 9 },  
+    ];
+    
+    let hoverState = chart.links.template.states.create("hover");
+    hoverState.properties.fillOpacity = 0.6;
+    
+    chart.dataFields.fromName = "from";
+    chart.dataFields.toName = "to";
+    chart.dataFields.value = "value";
+    
+    // for right-most label to fit
+    chart.paddingRight = 30;
+    
+    // make nodes draggable
+    var nodeTemplate = chart.nodes.template;
+    nodeTemplate.inert = true;
+    nodeTemplate.readerTitle = "Drag me!";
+    nodeTemplate.showSystemTooltip = true;
+    nodeTemplate.width = 20;
+    
+    // make nodes draggable
+    var nodeTemplate = chart.nodes.template;
+    nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
+    nodeTemplate.showSystemTooltip = true;
+    nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer
+    
+    }); // end am4core.ready()
+    </script>
+<body>
+    <div id="chartdiv"></div>
+</body>
+</html>
